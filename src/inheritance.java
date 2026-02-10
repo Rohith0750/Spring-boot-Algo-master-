@@ -1,7 +1,11 @@
 public class inheritance {
     public static void main(String[]args){
-        Fish shark= new Fish();
-        shark.eats();
+//        Fish shark= new Fish();
+//        shark.eats();
+        Dog dog = new Dog();
+        dog.eats();
+       int res= dog.legs=4;
+        System.out.println(res);
     }
 }
 class animal{
@@ -21,5 +25,12 @@ class Fish extends animal{
         System.out.println("Swim");
     }
 }
+//This is single level inheritance one base and one derived class
+//--------------------------------------------------------------------
+class Mammals extends animal{
+    int legs;
+}
 
-
+class Dog extends Mammals{
+    String breead;
+}
