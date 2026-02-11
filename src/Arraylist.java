@@ -8,6 +8,7 @@ public class Arraylist {
         list.add(6);
         list.add(7);
         list.add(8);
+        list.remove(2);
         System.out.println(list);
     }
 }
