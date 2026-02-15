@@ -10,6 +10,17 @@ public class Arraylist {
         list.add(8);
         list.remove(2);
         System.out.println(list);
+        int res = list.get(1);  // this is used to accss the element in the array
+        System.out.println(res);
+        //how to replace an elemnt here --> we  use set(index , value);
+        list.set(1,10);
+        System.out.println(list);
+        // remove an elelmt from the array list
+        list.remove(2);
+        System.out.println(list);
+        for(int li:list){
+            System.out.println(a);
+        }
     }
 }
 //Theorey
