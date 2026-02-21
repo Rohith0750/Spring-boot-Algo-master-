@@ -1,3 +1,37 @@
+/**
+ * This example demonstrates a class defined inside another class (nested class)
+ * to restrict access and improve encapsulation.
+ *
+ * The inner class (B) cannot be accessed directly without referring to the outer class (A).
+ *
+ * Accessing the outer class:
+ * <pre>
+ * A obj1 = new A();
+ * obj1.show();
+ * </pre>
+ *
+ * Accessing the inner class when it is declared as static:
+ * <pre>
+ * A.B obj1 = new A.B();
+ * obj1.shows();
+ * </pre>
+ *
+ * This works only if class B is declared as static.
+ *
+ * Accessing the inner class when it is NOT static:
+ * <pre>
+ * A obj = new A();
+ * A.B obj1 = obj.new B();
+ * obj1.shows();
+ * </pre>
+ *
+ * In this case, the inner class object must be created using the outer class object.
+ *
+ * Benefits:
+ * - Improves encapsulation
+ * - Restricts access to the inner class
+ * - Provides logical grouping of related classes
+ */
 public class LambdaExpressions {
     public static void main(String[] args) {
         A obj =  (a, b)->a+b;
@@ -5,6 +39,7 @@ public class LambdaExpressions {
         System.out.println(obj.add(1,2));
     }
 }
+
 @FunctionalInterface
  interface A{
     int add(int a,int b);
@@ -22,17 +57,7 @@ class A {
     }
 }
  */
-/**
-*we create a class inside the class , beacuse to restrict the particular class , we can acces it only using the parent class \
-*we cannot create the acces the b class directly , we can acces by using the a class
- *    A obj1 = new A();
- *         obj1.show(); --> this is to acces the a class , now to acces the b class
- *          A.B obj1 = new A.B();
- *         obj1.shows(); --> this only works when we make the class static if we remove the static it is error , then we can acces by
- *           A obj = new A();
- *        A.B obj1 = obj.new B();
- *        obj1.shows(); --> in this way we can acces it
- */
+
 
 /*
     class A {
