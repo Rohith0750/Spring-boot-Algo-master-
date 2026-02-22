@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Arraylist"},{"p":"<Unnamed>","l":"inheritance"},{"p":"<Unnamed>","l":"LambdaExpressions"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Recurssion"},{"p":"<Unnamed>","l":"SelectionSort"}];updateSearchResults();
