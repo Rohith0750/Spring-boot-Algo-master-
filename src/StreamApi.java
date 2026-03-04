@@ -23,3 +23,4 @@ public class StreamApi {
 
 //streams is used when you want to use the data which is already there without effecting the original data
 
+//added stramed a
