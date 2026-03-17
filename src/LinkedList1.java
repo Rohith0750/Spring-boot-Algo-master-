@@ -9,8 +9,10 @@ public class LinkedList1 {
     }
     public static node head;
     public static node tail;
+    public static int size;
     public void addfirst(int data){
         node newnode = new node(data);
+        size++;
         if(head==null){
             head=tail=newnode;
             return;
@@ -21,6 +23,7 @@ public class LinkedList1 {
 
     public void addLast(int data){
         node newnode =new node(data);
+        size++;
         if(head==null){
             head=tail=newnode;
             return;
@@ -34,16 +37,53 @@ public class LinkedList1 {
             return;
         }
         while(temp!=null){
-            System.out.print(temp.data+" ");
+            System.out.print(temp.data+"-->");
             temp=temp.next;
         }
+        System.out.println("null");
+    }
+    public void addMiddle(int idx, int data){
+        if(idx==0){
+            addfirst(data);
+            return;
+        }
+        node newnode=new node(data);
+        size++;
+        node temp=head;
+        int i=0;
+        while(i<idx-1){
+            temp=temp.next;
+            i++;
+        }
+        newnode.next=temp.next;
+        temp.next=newnode;
+    }
+
+    public int removefirst(){
+        if(size==0){
+            return -1;
+        } else if (size==1) {
+            int val=head.data;
+            head=tail=null;
+            return val;
+
+        }
+        int val=head.data;
+        head=head.next;
+        size--;
+        return val;
     }
 
     public static void main(String[] args){
         LinkedList1 list =new LinkedList1();
         list.addfirst(1);
         list.addfirst(2);
+
         list.addfirst(3);
+        list.addMiddle(2,15);
+        list.printlist();
+        System.out.println(list.size);
+        list.removefirst();
         list.printlist();
     }
 }
