@@ -7,4 +7,22 @@ public class LinkedList1 {
             this.next=null;
         }
     }
+    public static node head;
+    public static node tail;
+    public void addfirst(int data){
+        node newnode = new node(data);
+        if(head==null){
+            head=tail=newnode;
+            return;
+        }
+        newnode.next=head;
+        head=newnode;
+    }
+
+    public static void main(String[] args){
+        LinkedList1 list =new LinkedList1();
+list.addfirst(1);
+list.addfirst(2);
+list.addfirst(3);
+    }
 }
