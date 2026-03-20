@@ -74,16 +74,59 @@ public class LinkedList1 {
         return val;
     }
 
+    public int removelast(){
+        if(size==0){
+            return -1;
+        }
+        else if(size==1){
+            int val=head.data;
+            head=tail=null;
+            size=0;
+            return val;
+        }
+        node prev=head;
+        for(int i=0;i<size-2;i++){
+            prev=prev.next;
+        }
+        int val=prev.next.data;
+        prev.next=null;
+        size--;
+        return val;
+    }
+
+    public int iterativesearch(int key){
+        node temp=head;
+        int i=0;
+        while(temp!= null){
+            if(temp.data==key){
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+       return -1;
+    }
+
     public static void main(String[] args){
         LinkedList1 list =new LinkedList1();
-        list.addfirst(1);
-        list.addfirst(2);
+        list.addfirst(10);
+        list.addfirst(20);
+        list.addfirst(30);
+        list.addfirst(40);
+        list.addfirst(50);
+        list.printlist();
+        System.out.println(list.iterativesearch(30));
+        System.out.println(list.iterativesearch(60));
 
-        list.addfirst(3);
-        list.addMiddle(2,15);
-        list.printlist();
-        System.out.println(list.size);
-        list.removefirst();
-        list.printlist();
+        //list.addfirst(1);
+//        list.addfirst(2);
+//
+//        list.addfirst(3);
+//        list.addMiddle(2,15);
+//        list.printlist();
+//        System.out.println(list.size);
+//        list.removefirst();
+//       // list.removelast();
+//        list.printlist();
     }
 }
