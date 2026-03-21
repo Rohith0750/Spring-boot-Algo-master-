@@ -107,6 +107,21 @@ public class LinkedList1 {
        return -1;
     }
 
+    public void reverse(){
+        node prev=null;
+        node curr=tail=head;
+        node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+
+        }
+        head=prev;
+
+    }
+
     public static void main(String[] args){
         LinkedList1 list =new LinkedList1();
         list.addfirst(10);
@@ -115,8 +130,10 @@ public class LinkedList1 {
         list.addfirst(40);
         list.addfirst(50);
         list.printlist();
-        System.out.println(list.iterativesearch(30));
-        System.out.println(list.iterativesearch(60));
+        list.reverse();
+        list.printlist();
+//        System.out.println(list.iterativesearch(30));
+//        System.out.println(list.iterativesearch(60));
 
         //list.addfirst(1);
 //        list.addfirst(2);
