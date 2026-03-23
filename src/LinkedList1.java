@@ -122,6 +122,30 @@ public class LinkedList1 {
 
     }
 
+    public void findandremovethenthnodefromend(int n){
+        int sz=0;
+        node temp=head;
+        while(temp!=null){
+            temp=temp.next;
+            sz++;
+
+        }
+        if(n==sz){
+            head=head.next;
+            return;
+        }
+        int i=1;
+        int itofind=sz-n;
+        node prev=head;
+        while(i<itofind){
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+
+    }
+
     public static void main(String[] args){
         LinkedList1 list =new LinkedList1();
         list.addfirst(10);
@@ -130,7 +154,8 @@ public class LinkedList1 {
         list.addfirst(40);
         list.addfirst(50);
         list.printlist();
-        list.reverse();
+        list.findandremovethenthnodefromend(3);
+        //list.reverse();
         list.printlist();
 //        System.out.println(list.iterativesearch(30));
 //        System.out.println(list.iterativesearch(60));
