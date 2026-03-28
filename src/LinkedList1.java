@@ -145,6 +145,48 @@ public class LinkedList1 {
         return;
 
     }
+    public node findmid(node head){
+        node fast=head;
+        node slow=head;
+        while(fast.next!=null && fast!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
+
+    public boolean checkpalindrome(int n){
+        if(head==null || head.next==null){
+            return false;
+        }
+        //Step 1 --> get the mid
+        node midnode=findmid(head);
+
+
+        //step-2 -->reverse the 2nd half
+        node prev=null;
+        node curr=midnode;
+        node next;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        node right=prev;
+        node left=head;
+
+        //step3-->check right and left
+        while(left!=right){
+            if(left.data!=right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+    }
+
 
     public static void main(String[] args){
         LinkedList1 list =new LinkedList1();
