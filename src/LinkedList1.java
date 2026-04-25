@@ -234,5 +234,6 @@ public class LinkedList1 {
         ll.removeFirst();
         ll.removeLast();
         System.out.println(ll.toString());
+        
     }
 }
